@@ -16,11 +16,3 @@ export const dataSource = new DataSource({
     entities: [Banker, Customer, Transaction], // Add all your entities here
     synchronize: true, // Set to false in production
 });
-
-dataSource.initialize()
-    .then(() => {
-        console.log("Data Source has been initialized!");
-    })
-    .catch((err) => {
-        console.error("Error occurred during Data Source initialization:", err);
-    });

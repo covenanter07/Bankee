@@ -1,5 +1,12 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  PrimaryGeneratedColumn,
+  BeforeInsert,
+  BeforeUpdate,
+} from "typeorm";
+import * as bcrypt from "bcrypt";
 @Entity()
 export class Personal extends BaseEntity {
   @PrimaryGeneratedColumn()
@@ -11,7 +18,7 @@ export class Personal extends BaseEntity {
   @Column({ unique: true })
   email!: string;
 
-  @Column({ default: ""})
+  @Column({ default: "" })
   password!: string;
 
   @Column({})
@@ -20,6 +27,15 @@ export class Personal extends BaseEntity {
   @Column({})
   lastname!: string;
 
-  @Column({ unique: true, length: 15})
+  @Column({ unique: true, length: 15 })
   card_number!: string;
+
+  @BeforeInsert()
+  @BeforeUpdate()
+  async hashPassword() {
+    if (this.password) {
+      const salt = await bcrypt.genSalt(10);
+      this.password = await bcrypt.hash(this.password, salt);
+    }
+  }
 }

@@ -1,4 +1,3 @@
-// routes/Banker.ts
 import express, { Request, Response } from "express";
 import { dataSource } from "../config/datasource";
 import { Banker } from "../entities/Banker";

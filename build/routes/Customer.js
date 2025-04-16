@@ -18,16 +18,6 @@ const Customer_1 = require("../entities/Customer");
 const Transaction_1 = require("../entities/Transaction");
 const router = express_1.default.Router();
 router.use(express_1.default.json()); // Middleware to parse JSON bodies
-// router.get("/customer", async (_req: Request, res: Response) => {
-//   try {
-//     const custRep = dataSource.getRepository(Customer);
-//     const customers = await custRep.find({});
-//     return res.status(200).json(customers);
-//   } catch (error) {
-//     console.error(error);
-//     return res.status(500).json({ error: "Internal Server Error" });
-//   }
-// });
 // select firstname, balance
 router.get("/customer", (_req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -36,12 +26,7 @@ router.get("/customer", (_req, res) => __awaiter(void 0, void 0, void 0, functio
             .createQueryBuilder("customer")
             .select(["customer.firstname", "customer.balance"])
             .leftJoinAndSelect("customer.transactions", "transactions")
-            .where("customer.balance >= :minBalance AND customer.balance <= :maxBalance", {
-            minBalance: 2000,
-            maxBalance: 150000,
-        })
             .getMany();
-        // .getOne(); // get one transaction
         return res.status(200).json(customers);
     }
     catch (error) {

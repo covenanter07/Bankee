@@ -11,10 +11,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Database = void 0;
 const typeorm_1 = require("typeorm");
-class AbstractDatabase {
+class Database {
     constructor(config) {
-        this.config = config;
-        // Initialize DataSource instance with provided configuration
         this.dataSource = new typeorm_1.DataSource({
             type: config.type,
             database: config.database,
@@ -26,15 +24,9 @@ class AbstractDatabase {
             synchronize: true, // Set to false in production
         });
     }
-}
-class Database extends AbstractDatabase {
-    constructor(config) {
-        super(config);
-    }
     connect() {
         return __awaiter(this, void 0, void 0, function* () {
             try {
-                // Initialize the DataSource
                 yield this.dataSource.initialize();
                 console.log("PostgreSQL connected successfully.");
             }

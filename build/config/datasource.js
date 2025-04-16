@@ -17,10 +17,3 @@ exports.dataSource = new typeorm_1.DataSource({
     entities: [Banker_1.Banker, Customer_1.Customer, Transaction_1.Transaction], // Add all your entities here
     synchronize: true, // Set to false in production
 });
-exports.dataSource.initialize()
-    .then(() => {
-    console.log("Data Source has been initialized!");
-})
-    .catch((err) => {
-    console.error("Error occurred during Data Source initialization:", err);
-});
