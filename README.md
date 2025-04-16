@@ -61,7 +61,7 @@ Built entirely with real-world backend architecture principles including:
 | GET    | `/api/bankers`  | 查詢所有銀行員     |
 | POST   | `/api/bankers`  | 建立銀行員資料     |
 
-###nTransaction / Assignment
+### Transaction / Assignment
 
 | Method | Endpoint                                           | Description                           |
 |--------|----------------------------------------------------|---------------------------------------|
