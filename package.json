@@ -5,7 +5,9 @@
   "author": "Huan Len",
   "license": "MIT",
   "scripts": {
-    "dev": "tsc && nodemon ./src/index.ts"
+  "dev": "tsc && nodemon ./src/index.ts", 
+  "build": "tsc", 
+  "start": "node dist/index.js"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
