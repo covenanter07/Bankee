@@ -8,11 +8,12 @@ config();
 
 export const dataSource = new DataSource({
     type: 'postgres',
-    host: process.env.POSTGRES_HOST,
-    port: parseInt(process.env.POSTGRES_PORT || '5432', 10),
-    username: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD,
-    database: process.env.POSTGRES_DB,
-    entities: [Banker, Customer, Transaction], // Add all your entities here
-    synchronize: true, // Set to false in production
-});
+    url: process.env.DATABASE_URL, 
+    logging: false,
+    entities: [Banker, Customer, Transaction],
+    ssl: {
+    rejectUnauthorized: false, // Render 需要啟用 SSL 來連接 PostgreSQL
+    },
+    migrations: [],
+    subscribers: [],
+  });
