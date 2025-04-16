@@ -1,41 +1,30 @@
 import { DataSource } from "typeorm";
+import { config } from "dotenv";
 
-// Define the interface for database configuration
-interface DatabaseConfig {
-  type: "postgres"; // You can add other types if needed (e.g., 'mysql', 'mariadb', etc.)
-  database: string;
-  connection: {
-    host: string;
-    port: number;
-    username: string;
-    password: string;
-  };
-}
+config();
 
 class Database {
   private dataSource: DataSource;
 
-  constructor(config: DatabaseConfig) {
+  constructor() {
     this.dataSource = new DataSource({
-      type: config.type,
-      database: config.database,
-      host: config.connection.host,
-      port: config.connection.port,
-      username: config.connection.username,
-      password: config.connection.password,
-      entities: [__dirname + "/../entities/*{.js,.ts}"], // Add your entities
-      synchronize: true, // Set to false in production
+      type: "postgres",
+      url: process.env.DATABASE_URL, // 使用 DATABASE_URL
+      entities: [__dirname + "/../entities/*{.ts,.js}"], // 你的 Entity 路徑
+      synchronize: true, // 設為 false 在正式環境
+      ssl: { rejectUnauthorized: false }, // Render 需要開啟 SSL
     });
   }
 
   public async connect(): Promise<void> {
     try {
       await this.dataSource.initialize();
-      console.log("PostgreSQL connected successfully.");
+      console.log("✅ PostgreSQL connected successfully!");
     } catch (err) {
-      console.error("Not connected to PostgreSQL database:", err);
+      console.error("❌ Not connected to PostgreSQL database:", err);
     }
   }
 }
 
 export { Database };
+
