@@ -14,7 +14,7 @@ Built entirely with real-world backend architecture principles including:
 - MVC pattern  
 - Service + Repository structure  
 - OOP with class-based modules  
-- Database abstraction via `abstract class`
+- Database abstraction via abstract class
 
 ---
 
