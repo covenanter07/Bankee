@@ -96,7 +96,7 @@ POST https://bankee-api.onrender.com/api/customer
 ---
 
 
-## Deposit Transaction
+Deposit Transaction
 
 POST https://bankee-api.onrender.com/api/customer/1/transaction
 
