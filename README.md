@@ -92,15 +92,13 @@ POST https://bankee-api.onrender.com/api/customer
   "card_number": "9999888877776666"
 }
 
----
 
-#### Deposit Transaction
-```http
 POST https://bankee-api.onrender.com/api/customer/1/transaction
 
 {
   "type": "deposit",
   "amount": 5000
 }
+
 
 
