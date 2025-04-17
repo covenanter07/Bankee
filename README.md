@@ -77,11 +77,13 @@ You can test the API using Postman, curl, or integrate it with your frontend.
 
 ---
 
+```md
 ## Create a Customer
 
-```http         https://bankee-api.onrender.com/api/customer
+```http
+POST https://bankee-api.onrender.com/api/customer
 
-```body
+json
 {
    "username": "lucychen",
    "email": "lucy@mail.com",
@@ -93,11 +95,13 @@ You can test the API using Postman, curl, or integrate it with your frontend.
 
 ---
 
+```md
 ## Deposit Transaction
 
-```http                https://bankee-api.onrender.com/api/customer/1/transaction
+```http  
+POST https://bankee-api.onrender.com/api/customer/1/transaction
 
-```body
+json
 {
    "type": "deposit",
    "amount": 5000
