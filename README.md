@@ -80,7 +80,7 @@ You can test the API using Postman, curl, or integrate it with your frontend.
 ```md
 ## Create a Customer
 
-```http
+``http
 POST https://bankee-api.onrender.com/api/customer
 
 json
