@@ -86,10 +86,15 @@ POST             https://bankee-api.onrender.com/api/customer
 {
 
   "username": "lucychen",
+
   "email": "lucy@mail.com",
+
   "password": "123456",
+
   "firstname": "Lucy",
+
   "lastname": "Chen",
+
   "card_number": "9999888877776666"
 
 }
@@ -104,6 +109,7 @@ POST                https://bankee-api.onrender.com/api/customer/1/transaction
 {
 
   "type": "deposit",
+
   "amount": 5000
 
 }
