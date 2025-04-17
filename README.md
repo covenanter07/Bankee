@@ -65,3 +65,38 @@ Built entirely with real-world backend architecture principles including:
 |--------|----------------------------------------------------|---------------------------------------|
 | GET    | `/api/transaction`                                 | 查詢所有交易（佔位路由）               |
 | PUT    | `/api/banker/:bankId/customer/:customerId`         | 指派銀行員給客戶                     |
+
+## Deployment
+
+The API is deployed on [Render](https://render.com), with both the backend API and a PostgreSQL database running in the cloud.
+
+**Live API Base URL**:  
+[https://bankee-api.onrender.com/api](https://bankee-api.onrender.com/api)
+
+You can test the API using Postman, curl, or integrate it with your frontend.
+
+---
+
+### Example Requests
+
+#### Create a Customer
+```http
+POST https://bankee-api.onrender.com/api/customer
+
+{
+  "username": "lucychen",
+  "email": "lucy@mail.com",
+  "password": "123456",
+  "firstname": "Lucy",
+  "lastname": "Chen",
+  "card_number": "9999888877776666"
+}
+
+POST https://bankee-api.onrender.com/api/customer/1/transaction
+
+{
+  "type": "deposit",
+  "amount": 5000
+}
+
+
