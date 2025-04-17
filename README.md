@@ -73,7 +73,7 @@ Built entirely with real-world backend architecture principles including:
 The API is deployed on [Render](https://render.com), with both the backend API and a PostgreSQL database running in the cloud.
 
 **Live API Base URL**:  
-[https://bankee-api.onrender.com/api](https://bankee-api.onrender.com/api)
+[https://bankee-api.onrender.com](https://bankee-api.onrender.com)
 
 You can test the API using Postman, curl, or integrate it with your frontend.
 
