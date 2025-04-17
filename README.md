@@ -77,12 +77,9 @@ You can test the API using Postman, curl, or integrate it with your frontend.
 
 ---
 
- Create a Customer
+### Create a Customer
 
-```http
 POST https://bankee-api.onrender.com/api/customer
-
-
 {
    "username": "lucychen",
    "email": "lucy@mail.com",
@@ -93,15 +90,9 @@ POST https://bankee-api.onrender.com/api/customer
 }
 
 
-Deposit Transaction
+### Deposit Transaction
 
-To create a deposit transaction, send a `POST` request to the `/api/customer/{customerId}/transaction` endpoint.
-
-
-**Request:**
-```http
 POST https://bankee-api.onrender.com/api/customer/1/transaction
-
 {
    "type": "deposit",
    "amount": 5000
