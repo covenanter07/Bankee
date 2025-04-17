@@ -79,7 +79,6 @@ You can test the API using Postman, curl, or integrate it with your frontend.
 
 ## Create a Customer
 
-**Request:**
 ```http
 POST https://bankee-api.onrender.com/api/customer
 
@@ -92,10 +91,6 @@ POST https://bankee-api.onrender.com/api/customer
    "lastname": "Chen",
    "card_number": "9999888877776666"
 }
-
-
----
-
 
 ## Deposit Transaction
 
