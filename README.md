@@ -75,32 +75,3 @@ The API is deployed on [Render](https://render.com), with both the backend API a
 
 You can test the API using Postman, curl, or integrate it with your frontend.
 
----
-
-### Create a Customer
-
-POST https://bankee-api.onrender.com/api/customer
-
-json
-{
-   "username": "lucychen",
-   "email": "lucy@mail.com",
-   "password": "123456",
-   "firstname": "Lucy",
-   "lastname": "Chen",
-   "card_number": "9999888877776666"
-}
-
-
-### Deposit Transaction
-
-POST https://bankee-api.onrender.com/api/customer/1/transaction
-
-json
-{
-   "type": "deposit",
-   "amount": 5000
-}
-
-
-
