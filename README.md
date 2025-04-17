@@ -66,6 +66,8 @@ Built entirely with real-world backend architecture principles including:
 | GET    | `/api/transaction`                                 | 查詢所有交易（佔位路由）               |
 | PUT    | `/api/banker/:bankId/customer/:customerId`         | 指派銀行員給客戶                     |
 
+---
+
 ## Deployment
 
 The API is deployed on [Render](https://render.com), with both the backend API and a PostgreSQL database running in the cloud.
